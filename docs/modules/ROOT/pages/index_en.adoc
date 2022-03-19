@@ -1,10 +1,10 @@
 ////
 Nombre y título del trabajo
 ////
-= PRÁCTICA 2 – Esquema Algorítmico Greedy o Voraz: Pavimentación de caminos
-:navtitle: Introducción
+= Practice 2 – Greedy desing technique: Road paving
+:navtitle: Introduction
 
-Estructuras de datos y Algoritmos II. Universidad de Almería
+Data Structures and Algorithms II. University of Almeria
 
 _Version_ *{page-component-display-version}*
 
@@ -12,14 +12,14 @@ _Version_ *{page-component-display-version}*
 ////
 COLOCA A CONTINUACION LOS OBJETIVOS
 ////
-== Objetivos
+== Goals
 ====
 * Construir soluciones a un problema utilizando el método algorítmico greedy (o voraz).
 * Comparar los algoritmos implementados tanto cualitativa como cuantitativamente.
 * Realizar el análisis de la eficiencia de las soluciones aportadas, y una comparativa tanto desde el punto de vista teórico como práctico.
 ====
 
-== Requerimientos
+== Requerements
 
 Para superar esta práctica se debe realizar lo siguiente:
 
@@ -31,7 +31,7 @@ concreta (en este caso, resolver un problema relativo a una red de caminos).
 * Evaluar los algoritmos greedy implementados, utilizando redes reales y redes generadas
 aleatoriamente.
 
-== Enunciado del problema
+== Problem statement
 
 Una de las principales aplicaciones prácticas de los grafos son las *redes*, por ejemplo: la red de carreteras, la red de ferrocarriles, las redes de comunicaciones, etc. En este caso tenemos una red de caminos que conectan todos los núcleos de población del país *EDAland*, y la necesidad que tiene el Ministerio de Infraestructuras y transportes de ese país es la de pavimentarlos. Pero dada la actual crisis económica en que estamos inmersos, no se dispone de presupuesto suficiente para poder pavimentar todos los posibles caminos del país. Tras una dura negociación con el ministerio y teniendo en cuenta el reducido presupuesto disponible, se ha decidido que se pavimentarán únicamente  aquellos caminos para poder ir de un núcleo de población a otro siguiendo una ruta pavimentada, y además, se dedique el menor presupuesto posible en la realización de la obra. Otro aspecto a considerar es que a los habitantes del país no les importa recorrer mucha distancia, pues ahora se mueven en bicicleta (dado el elevado precio del combustible) que es muy beneficioso para la salud y el medioambiente.
 *El Ministro está muy interesado en saber qué caminos hay que pavimentar para conectar a todos los posibles núcleos de población del país con el menor presupuesto posible.*
@@ -50,7 +50,7 @@ image::pr2-fig2.png[Red nacional de caminos de EDAland,width=640,pdfwidth=80%,al
 
 
 
-== Trabajo a desarrollar
+== Work to develop
 
 Deberá proponer e implementar dos soluciones (algoritmos) con el esquema greedy (voraz) al
 problema planteado. Un algoritmo escogerá la arista de menor coste para pavimentar entre las que queden disponibles, manteniendo conexa la subred que se está construyendo. Y el otro, seleccionará la arista de menor coste entre todas las restantes, aunque la subred resultante no sea conexa. Para el primer caso, se implementarán dos variantes del algoritmo, utilizando una *cola de prioridad y sin ella*.
@@ -78,7 +78,7 @@ Para ello deberá realizar los siguientes apartados:
 
 * *Estudio experimental*: Validación de los algoritmos greedy implementados sobre las redes reales (EDAland) proporcionadas. Para ello, se deberán obtener y comparar los tiempos de ejecución de los algoritmos implementados. Se contrastarán los resultados teóricos y los experimentales, comprobando si los experimentales confirman los teóricos previamente analizados. Se justificarán los experimentos realizados, y en caso de discrepancia entre la teoría y los experimentos se debe intentar buscar una explicación razonada. Además, se generarán *redes aleatorias* (grafos no orientados, valorados positivamente y conexos), fijando un número vértices (por ejemplo 5000, 10000, 15000 y 20000) y variando el número aristas de tal manera que el grafo quede siempre conexo (*generador de redes aleatorias*). Sobre estas nuevas redes, se volverán a probar los algoritmos greedy implementados para poder compararlos con un número mayor de vértices y aristas.
 
-== Entregas
+== Submissions
 
 Se ha de entregar, en fecha, un repositorio público de GitHub (mismo repositorio para todas las prácticas de EDA II) con toda la documentación y código fuente requerido en la práctica:
 
@@ -101,7 +101,7 @@ La *memoria* de práctica a entregar debe ser breve, clara y estar bien escrita.
 
 * Es importante incluir siempre las *fuentes bibliográficas* utilizadas (web, libros, artículos, etc.) y hacer referencia a ellas en el documento.
 
-== Evaluación
+== Assessment
 
 Cada apartado se evaluará independientemente, aunque es condición necesaria para aprobar la práctica que los programas implementados funcionen correctamente.
 
@@ -114,6 +114,6 @@ Se penalizará no entregar el apartado de introducción teórico o una mala pres
 
 Se podrá requerir la defensa del código y de la memoria por parte de profesor.
 
-== Fecha de entrega
+== Deadline
 
-Fecha de entrega: *17 de Abril de 2020*
+Deadline: *April 17th 2020*
