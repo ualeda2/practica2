@@ -1,11 +1,6 @@
-name: despliegue-continuo
-title: Despliegue continuo con Jenkins
-version: 0.22.2
+name: eda2-practica2
+title: Práctica 2
+version: v.2022
 # prerelease: -beta.1
 nav:
 - modules/ROOT/nav.adoc
-- modules/prerrequisitos/nav.adoc
-- modules/infraestructura/nav.adoc
-- modules/jenkinsdocker/nav.adoc
-- modules/java-web-app/nav.adoc
-- modules/node-app/nav.adoc

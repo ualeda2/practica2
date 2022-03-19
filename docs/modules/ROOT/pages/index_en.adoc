@@ -4,6 +4,12 @@ Name and title of the work
 = Practice 2 – Greedy design technique: Road paving
 :navtitle: Introduction
 
+// GitHub conf, to find figures in .adoc
+ifdef::env-github[]
+:imagesdir: ../images
+
+endif::[]
+
 Data Structures and Algorithms II. University of Almeria
 
 _Version_ *{page-component-display-version}*
@@ -42,7 +48,7 @@ First of all, there is the *reduced network of roads* of EDAland (link: #fig1[Fi
 .Reduced path network of EDAland
 image::pr2-fig1.png[Reduced path network of EDAland,width=640,pdfwidth=80%,align="center"]
 
-Once you check the correct operation of our greedy algorithms in the reduced network of roads, we will execute them in the *national network of roads* of EDALand that the Ministry has (1053 population centers and 2017 roads with the estimated cost of paving them in thousands of euros) (link:#fig2[ Figure 2]), and in this way we would already have the total budget that the global work would cost, which, as we already know, must be the least possible (main requirement of the Ministry).
+Once you check the correct operation of our greedy algorithms in the reduced network of roads, we will execute them in the *national network of roads* of EDALand that the Ministry has (1053 population centers and 2017 roads with the estimated cost of paving them in thousands of euros) (link:#fig2[Figure 2], adapted from roads graph published in  <<gines-mapa>>), and in this way we would already have the total budget that the global work would cost, which, as we already know, must be the least possible (main requirement of the Ministry).
 
 [#fig2]
 .EDAland National Road Network
@@ -70,6 +76,23 @@ ifdef::backend-html5[]
 *1 2 25.0* // vi vj costij
 // like this until completing m entries/edges
 ----
+endif::[]
+
+// Bloque de codigo en pdf (no admite negritas)
+ifdef::backend-pdf[]
+[source]
+----
+0 // undirected
+n // number of vertices
+1 // vertex 1
+2 // vertex 2
+...
+n // vertex n
+m // number of edges
+1 2 25.0 // vi vj costij
+// like this until completing m entries/edges
+----
+
 endif::[]
 
 To do this, you must complete the following sections:
@@ -123,4 +146,4 @@ Deadline: *April 17th 2020*
 [bibliography]
 == References
 
-[[[gines-mapa,1]]] Gines García Mateos. The Traveler's Challenge. Available online on http://dis.um.es/~ginesgm/retoviajante.html [Date of consult: 2022/03/19]
+* [[[gines-mapa,1]]] Gines García Mateos. The Traveler's Challenge. Available online on http://dis.um.es/~ginesgm/retoviajante.html [Date of consult: 2022/03/19]

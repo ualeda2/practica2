@@ -25,23 +25,20 @@ Codificación, idioma, tabla de contenidos, tipo de documento
 // Eliminar el bloque final "last updated"
 :reproducible:      
 
-// PDF  -- no parece que funcione
+// PDF
 :pdf-style: themes/my-theme.yml
 :title_page: false
-
-:page-component-display-version: curso.2022
-
-
 // Bloque de codigo en pdf: no incluir la sección "Tabla de contenidos"
 ifdef::backend-pdf[]
 :toc!:
 endif::[]
 
+:page-component-display-version: curso.2022
+
 // :leveloffset: 1
 
 //includes
 [.text-justify]
-
 :section: ROOT
 :sectionPath: modules/{section}/pages
 :imagesdir: modules/{section}/images
