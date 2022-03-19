@@ -4,7 +4,7 @@ Nombre y título del trabajo
 = PRÁCTICA 2 – Esquema Algorítmico Greedy o Voraz: Pavimentación de caminos
 :navtitle: Introducción
 ifdef::env-github[]
-:imagesdir: images
+:imagesdir: ../images
 endif::[]
 
 Estructuras de datos y Algoritmos II. Universidad de Almería
