@@ -1,7 +1,7 @@
 ////
-Nombre y título del trabajo
+Name and title of the work
 ////
-= Practice 2 – Greedy desing technique: Road paving
+= Practice 2 – Greedy design technique: Road paving
 :navtitle: Introduction
 
 Data Structures and Algorithms II. University of Almeria
@@ -10,112 +10,111 @@ _Version_ *{page-component-display-version}*
 
 
 ////
-COLOCA A CONTINUACION LOS OBJETIVOS
+PLACE THE OBJECTIVES BELOW
 ////
 == Goals
 ====
-* Construir soluciones a un problema utilizando el método algorítmico greedy (o voraz).
-* Comparar los algoritmos implementados tanto cualitativa como cuantitativamente.
-* Realizar el análisis de la eficiencia de las soluciones aportadas, y una comparativa tanto desde el punto de vista teórico como práctico.
+* Construct solutions to a problem using the greedy algorithmic method.
+* Compare the implemented algorithms both qualitatively and quantitatively.
+* Carry out an analysis of the efficiency of the solutions provided, and a comparison both from a theoretical and practical point of view.
 ====
 
-== Requerements
+== Requirements
 
-Para superar esta práctica se debe realizar lo siguiente:
+To pass this practice, the following must be done:
 
-* Recordar (de EDA I, el mapa de adyacencias) las estructuras de datos para implementar una red (grafo no dirigido) y su uso para la resolución de problemas.
+* Remember (from EDA I, the adjacency map) the data structures to implement a network (undirected graph) and its use for problem solving .
 
-* Conocer cómo implementar el esquema greedy sobre grafos para responder a una necesidad
-concreta (en este caso, resolver un problema relativo a una red de caminos).
+* Know how to implement the greedy scheme on graphs to respond to a
+specific need (in this case, solving a problem related to a road network).
 
-* Evaluar los algoritmos greedy implementados, utilizando redes reales y redes generadas
-aleatoriamente.
+* Evaluate the implemented greedy algorithms, using real networks and
+randomly generated networks.
 
 == Problem statement
 
-Una de las principales aplicaciones prácticas de los grafos son las *redes*, por ejemplo: la red de carreteras, la red de ferrocarriles, las redes de comunicaciones, etc. En este caso tenemos una red de caminos que conectan todos los núcleos de población del país *EDAland*, y la necesidad que tiene el Ministerio de Infraestructuras y transportes de ese país es la de pavimentarlos. Pero dada la actual crisis económica en que estamos inmersos, no se dispone de presupuesto suficiente para poder pavimentar todos los posibles caminos del país. Tras una dura negociación con el ministerio y teniendo en cuenta el reducido presupuesto disponible, se ha decidido que se pavimentarán únicamente  aquellos caminos para poder ir de un núcleo de población a otro siguiendo una ruta pavimentada, y además, se dedique el menor presupuesto posible en la realización de la obra. Otro aspecto a considerar es que a los habitantes del país no les importa recorrer mucha distancia, pues ahora se mueven en bicicleta (dado el elevado precio del combustible) que es muy beneficioso para la salud y el medioambiente.
-*El Ministro está muy interesado en saber qué caminos hay que pavimentar para conectar a todos los posibles núcleos de población del país con el menor presupuesto posible.*
+One of the main practical applications of graphs are *networks*, for example: the road network, the railway network, communication networks, etc. In this case we have a network of roads that connect all the population centers of the country *EDAland*, and the need of the Ministry of Infrastructure and Transport of that country is to pave them. But given the current economic crisis in which we are immersed, there is not enough budget to be able to pave all possible roads in the country. After a tough negotiation with the ministry and taking into account the reduced budget available, it has been decided that only some roads will be paved to be able to go from one population center to another following a paved route, and also, the smallest possible budget will be dedicated to the realization of the work. Another aspect to consider is that the inhabitants of the country do not mind traveling a long distance, since now they move by bicycle (given the high price of fuel), which is very beneficial for health and the environment.
+*The Minister is very interested in knowing which roads need to be paved to connect all possible population centers in the country with the lowest possible budget.*
 
-En un primer lugar se dispone de la *red reducida de caminos* de EDAland (link:#fig1[Figura 1]) que conecta a los grandes núcleos de población (ciudades) del país (21 ciudades y 29 caminos), junto con la estimación en miles de euros de lo que costaría pavimentar el trayecto entre dos ciudades (misma red de EDA I). Por ejemplo, pavimentar el camino que conecta Almería con Granada constaría 173.000 euros. Esta red nos servirá para probar nuestros algoritmos greedy y verificar su correcto funcionamiento. 
+First of all, there is the *reduced network of roads* of EDAland (link: #fig1[Figure 1]) that connects the large population centers (cities) of the country (21 cities and 29 roads), together with the estimate in thousands of euros of what it would cost to pave the route between two cities (same road network as in EDA I). For example, paving the road that connects Almería with Granada would cost 173,000 euros. This network will be used to test our greedy algorithms and verify their correct operation. 
 
 [#fig1]
-.Red reducida de caminos de EDAland
-image::pr2-fig1.png[Red reducida de caminos de EDAland,width=640,pdfwidth=80%,align="center"]
+.Reduced path network of EDAland
+image::pr2-fig1.png[Reduced path network of EDAland,width=640,pdfwidth=80%,align="center"]
 
-Una vez comprobado el correcto funcionamiento de nuestros algoritmos greedy en la red reducida de caminos, los ejecutaremos en la *red nacional de caminos* de EDALand que dispone el Ministerio (1053 núcleos de población y 2017 caminos con el coste estimado de pavimentarlos en miles de euros) (link:#fig2[Figura 2]), y de esta manera ya se tendría el presupuesto total que costaría la obra global, que como ya sabemos debe ser el menor posible (requerimiento principal del Ministerio).
+Once you check the correct operation of our greedy algorithms in the reduced network of roads, we will execute them in the *national network of roads* of EDALand that the Ministry has (1053 population centers and 2017 roads with the estimated cost of paving them in thousands of euros) (link:#fig2[ Figure 2]), and in this way we would already have the total budget that the global work would cost, which, as we already know, must be the least possible (main requirement of the Ministry).
 
 [#fig2]
-.Red nacional de caminos de EDAland
-image::pr2-fig2.png[Red nacional de caminos de EDAland,width=640,pdfwidth=80%,align="center"]
-
+.EDAland National Road Network
+image::pr2-fig2.png[EDAland National Road Network,width=640,pdfwidth=80%,align="center"]
 
 
 == Work to develop
 
-Deberá proponer e implementar dos soluciones (algoritmos) con el esquema greedy (voraz) al
-problema planteado. Un algoritmo escogerá la arista de menor coste para pavimentar entre las que queden disponibles, manteniendo conexa la subred que se está construyendo. Y el otro, seleccionará la arista de menor coste entre todas las restantes, aunque la subred resultante no sea conexa. Para el primer caso, se implementarán dos variantes del algoritmo, utilizando una *cola de prioridad y sin ella*.
+You must propose and implement two solutions (algorithms) with the greedy scheme to the
+problem posed. An algorithm will choose the lowest cost edge to pave among those that are available, keeping the subnet being built connected. The other will select the edge with the lowest cost among all the remaining ones, even if the resulting subnetwork is not connected. For the first case, two variants of the algorithm will be implemented, using a *priority queue and without*.
 
-Además, deberá implementar un *generador de redes aleatorias* (grafos no orientados, valorados positivamente y conexos). En el que dados un número de vértices y un número de aristas válido, generará una red aleatoria en un archivo de texto en disco (siguiendo el mismo formato que las redes reales) para luego poder cargarlo y ejecutar los algoritmos greedy sobre redes mucho más grandes.
+In addition, you will need to implement a *random network generator* (unoriented, positively valued, connected graphs). In which, given a valid number of vertices and a valid number of edges, it will generate a random network in a text file on disk (following the same format as real networks) so that it can then be loaded and run the greedy algorithms on much larger networks. .
 
 ifdef::backend-html5[]
 
 [source,subs="verbatim,quotes"]
 ----
-*0* // no dirigido
-*n* // número de vértices
-*1* // vértice 1
-*2* // vértice 2
+*0* // undirected
+*n* // number of vertices
+*1* // vertex 1
+*2* // vertex 2
 *...*
-*n* // vértice n
-*m* // número de aristas
-*1 2 25.0* // vi vj costeij
-// así hasta completar m entradas/aristas
+*n* // vertex n
+*m* // number of edges
+*1 2 25.0* // vi vj costij
+// like this until completing m entries/edges
 ----
 endif::[]
 
-Para ello deberá realizar los siguientes apartados:
+To do this, you must complete the following sections:
 
-* *Estudio de la implementación*: Explicar los detalles más importantes de la implementación, tanto de las estructuras de datos utilizadas para almacenar la red, como de los algoritmos greedy implementados. El código debe de estar razonablemente bien documentado (JavaDoc).
+* *Study of the implementation*: Explain the most important details of the implementation, both of the data structures used to store the network, and of the implemented greedy algorithms. The code must be reasonably well documented (JavaDoc).
 
-* *Estudio teórico*: Estudiar los tiempos de ejecución de los algoritmos implementados, en función del número de núcleos de población (vértices) y del número de caminos (aristas). Comparar también los algoritmos propuestos, teniendo en cuenta las características de la  red (grafo) y las técnicas de implementación elegidas. Responder de forma justificada a las siguientes preguntas: *(1)* ¿el resultado de la ejecución de cada algoritmo es único?. *(2)* ¿el resultado de la ejecución de los dos algoritmos debe ser el mismo?, ¿por qué?. *(3)* si el peso de las aristas fuese la distancia entre dos ciudades, con la estructura resultante, ¿podemos determinar el camino mínimo entre dos pares de ciudades cualquiera?.
+* *Theoretical study*: Study the execution times of the implemented algorithms, depending on the number of population centers (vertices) and the number of paths (edges). Also compare the proposed algorithms, taking into account the characteristics of the network (graph) and the chosen implementation techniques. Justifiably answer the following questions: *(1)* Is the result of the execution of each algorithm unique? *(2)* Should the result of the execution of the two algorithms be the same? Why? *(3)* If the weight of the edges were the distance between two cities, with the resulting structure, can we determine the minimum path between any two pairs of cities?
 
-* *Estudio experimental*: Validación de los algoritmos greedy implementados sobre las redes reales (EDAland) proporcionadas. Para ello, se deberán obtener y comparar los tiempos de ejecución de los algoritmos implementados. Se contrastarán los resultados teóricos y los experimentales, comprobando si los experimentales confirman los teóricos previamente analizados. Se justificarán los experimentos realizados, y en caso de discrepancia entre la teoría y los experimentos se debe intentar buscar una explicación razonada. Además, se generarán *redes aleatorias* (grafos no orientados, valorados positivamente y conexos), fijando un número vértices (por ejemplo 5000, 10000, 15000 y 20000) y variando el número aristas de tal manera que el grafo quede siempre conexo (*generador de redes aleatorias*). Sobre estas nuevas redes, se volverán a probar los algoritmos greedy implementados para poder compararlos con un número mayor de vértices y aristas.
+* *Experimental study*: Validation of the greedy algorithms implemented on the real networks (EDAland) provided. To do this, the execution times of the implemented algorithms must be obtained and compared. The theoretical and experimental results will be contrasted, checking if the experimental ones confirm the previously analyzed theoretical ones. The experiments carried out will be justified, and in case of discrepancy between the theory and the experiments, an attempt should be made to find a reasoned explanation. In addition, *random networks* (non-oriented, positively valued and connected graphs) will be generated, setting a number of vertices (for example 5000, 10000, 15000 and 20000) and varying the number of edges in such a way that the graph is always connected (* random net generator*). On these new networks, the implemented greedy algorithms will be retested in order to compare them with a greater number of vertices and edges.
 
 == Submissions
 
-Se ha de entregar, en fecha, un repositorio público de GitHub (mismo repositorio para todas las prácticas de EDA II) con toda la documentación y código fuente requerido en la práctica:
+A public GitHub repository (same repository for all EDA II practices) with all the documentation and source code required in the practice must be submitted on date:
 
-* En dicho repositorio crear una nueva carpeta llamada `practica_2`, donde creéis dos subcarpetas una para la documentación, `docs` y otra para el código fuente `sources`.
+* In said repository, create a new folder called `practica_2 `, where you create two subfolders, one for the documentation, `docs`, and one for the source code, `sources`.
 
-* Memoria que explique todo lo que habéis realizado en la práctica. La memoria deberá tener el formato que se indica a continuación. Si se desea, también se podrá realizar una presentación de la práctica.
+* Memory that explains everything you have done in practice. The memory must have the format indicated below. If desired, you can also make a presentation of the practice.
 
-* Código fuente de la aplicación, desarrollada en JAVA, que resuelva todo lo planteado en la práctica. Recordad que tendréis que medir tiempos de ejecución de vuestras soluciones por lo que deberéis incluir las órdenes necesarias para ello en el código fuente.
+* Source code of the application, developed in JAVA, which solves everything raised in practice. Remember that you will have to measure execution times of your solutions, so you must include the necessary commands for this in the source code.
 
-* Juegos de prueba que consideréis oportunos para asegurarnos de que todo funciona
-correctamente.
+* Test games that you consider appropriate to make sure that everything works
+correctly.
 
-La *memoria* de práctica a entregar debe ser breve, clara y estar bien escrita. Ésta debe incluir las siguientes secciones:
+The *memory* of practice to deliver must be brief, clear and well written. This should include the following sections:
 
-* Una breve *introducción* con un estudio teórico del método algorítmico utilizado en esta práctica (greedy).
+* A brief *introduction* with a theoretical study of the algorithmic method used in this practice (greedy).
 
-* Una sección para cada uno de *apartados propuestos* a desarrollar en esta práctica (estudio de la implementación, estudio teórico y estudio experimental). Hemos de remarcar que deben incluirse los apartados en el mismo orden en el que se han expuesto.
+* A section for each of the *proposed sections* to be developed in this practice (implementation study, theoretical study and experimental study). We must emphasize that the sections must be included in the same order in which they have been presented.
 
-* Se incluirá también un anexo con el diseño del código implementado (no incluir código), junto con una lista de los archivos fuente y una breve descripción del contenido de cada uno. 
+* An annex with the design of the implemented code will also be included (do not include code), along with a list of the source files and a brief description of the content of each one. 
 
-* Es importante incluir siempre las *fuentes bibliográficas* utilizadas (web, libros, artículos, etc.) y hacer referencia a ellas en el documento.
+* It is important to always include the *bibliographical sources* used (web, books, articles, etc.) and refer to them in the document.
 
 == Assessment
 
-Cada apartado se evaluará independientemente, aunque es condición necesaria para aprobar la práctica que los programas implementados funcionen correctamente.
+Each section will be evaluated independently, although it is a necessary condition to pass the internship that the implemented programs work correctly.
 
-* La implementación junto con la documentación del código se valorará sobre un 40%
-* El estudio de la implementación se valorará sobre un 10%
-* El estudio teórico se valorará sobre un 15%
-* El estudio experimental se valorará sobre un 35%
+* The implementation together with the documentation of the code will be valued out of 40%
+* The study of the implementation will be valued out of 10%
+* The theoretical study will be valued out of 15%
+* The experimental study will be valued out of 35%
 
-Se penalizará no entregar el apartado de introducción teórico o una mala presentación de la memoria.
+It will be penalized not deliver the theoretical introduction section or a bad presentation of the report.
 
-Se podrá requerir la defensa del código y de la memoria por parte de profesor.
+The defense of the code and memory by the teacher may be required.
 
 == Deadline
 
@@ -124,4 +123,4 @@ Deadline: *April 17th 2020*
 [bibliography]
 == References
 
-[[[gines-mapa,1]]] Gines García Mateos. El Reto del Viajante. Available online on http://dis.um.es/~ginesgm/retoviajante.html [Date of consult: 2022/03/19]
+[[[gines-mapa,1]]] Gines García Mateos. The Traveler's Challenge. Available online on http://dis.um.es/~ginesgm/retoviajante.html [Date of consult: 2022/03/19]
