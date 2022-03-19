@@ -3,6 +3,9 @@ Nombre y título del trabajo
 ////
 = PRÁCTICA 2 – Esquema Algorítmico Greedy o Voraz: Pavimentación de caminos
 :navtitle: Introducción
+ifdef::env-github[]
+:imagesdir: images
+endif::[]
 
 Estructuras de datos y Algoritmos II. Universidad de Almería
 
@@ -56,6 +59,7 @@ Deberá proponer e implementar dos soluciones (algoritmos) con el esquema greedy
 problema planteado. Un algoritmo escogerá la arista de menor coste para pavimentar entre las que queden disponibles, manteniendo conexa la subred que se está construyendo. Y el otro, seleccionará la arista de menor coste entre todas las restantes, aunque la subred resultante no sea conexa. Para el primer caso, se implementarán dos variantes del algoritmo, utilizando una *cola de prioridad y sin ella*.
 
 Además, deberá implementar un *generador de redes aleatorias* (grafos no orientados, valorados positivamente y conexos). En el que dados un número de vértices y un número de aristas válido, generará una red aleatoria en un archivo de texto en disco (siguiendo el mismo formato que las redes reales) para luego poder cargarlo y ejecutar los algoritmos greedy sobre redes mucho más grandes.
+
 // Bloque de codigo en html5 (admite negritas)
 ifdef::backend-html5[]
 
