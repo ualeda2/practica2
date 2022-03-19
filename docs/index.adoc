@@ -31,6 +31,12 @@ Codificación, idioma, tabla de contenidos, tipo de documento
 
 :page-component-display-version: curso.2022
 
+
+// Bloque de codigo en pdf: no incluir la sección "Tabla de contenidos"
+ifdef::backend-pdf[]
+:toc!:
+endif::[]
+
 // :leveloffset: 1
 
 //includes

@@ -120,3 +120,8 @@ Se podrá requerir la defensa del código y de la memoria por parte de profesor.
 == Deadline
 
 Deadline: *April 17th 2020*
+
+[bibliography]
+== References
+
+[[[gines-mapa,1]]] Gines García Mateos. El Reto del Viajante. Available online on http://dis.um.es/~ginesgm/retoviajante.html [Date of consult: 2022/03/19]

@@ -3,6 +3,8 @@ Nombre y título del trabajo
 ////
 = PRÁCTICA 2 – Esquema Algorítmico Greedy o Voraz: Pavimentación de caminos
 :navtitle: Introducción
+
+// Bloque para GitHub, para que al visualizar el .adoc encuentre las figuras.
 ifdef::env-github[]
 :imagesdir: ../images
 :figure-caption: Figura
@@ -46,7 +48,7 @@ En un primer lugar se dispone de la *red reducida de caminos* de EDAland (link:#
 .Red reducida de caminos de EDAland
 image::pr2-fig1.png[Red reducida de caminos de EDAland,width=640,pdfwidth=80%,align="center"]
 
-Una vez comprobado el correcto funcionamiento de nuestros algoritmos greedy en la red reducida de caminos, los ejecutaremos en la *red nacional de caminos* de EDALand que dispone el Ministerio (1053 núcleos de población y 2017 caminos con el coste estimado de pavimentarlos en miles de euros) (link:#fig2[Figura 2]), y de esta manera ya se tendría el presupuesto total que costaría la obra global, que como ya sabemos debe ser el menor posible (requerimiento principal del Ministerio).
+Una vez comprobado el correcto funcionamiento de nuestros algoritmos greedy en la red reducida de caminos, los ejecutaremos en la *red nacional de caminos* de EDALand que dispone el Ministerio (1053 núcleos de población y 2017 caminos con el coste estimado de pavimentarlos en miles de euros) (link:#fig2[Figura 2], adaptado el grafo de carreteras que aparece en <<gines-mapa>>), y de esta manera ya se tendría el presupuesto total que costaría la obra global, que como ya sabemos debe ser el menor posible (requerimiento principal del Ministerio).
 
 [#fig2]
 .Red nacional de caminos de EDAland
@@ -144,3 +146,9 @@ Se podrá requerir la defensa del código y de la memoria por parte de profesor.
 == Fecha de entrega
 
 Fecha de entrega: *17 de Abril de 2020*
+
+
+[bibliography]
+== Referencias
+
+[[[gines-mapa,1]]] Gines García Mateos. El Reto del Viajante. Disponible online en http://dis.um.es/~ginesgm/retoviajante.html [Fecha de consulta: 19/03/2022]
