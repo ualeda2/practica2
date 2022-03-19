@@ -151,4 +151,4 @@ Fecha de entrega: *17 de Abril de 2020*
 [bibliography]
 == Referencias
 
-[[[gines-mapa,1]]] Gines García Mateos. El Reto del Viajante. Disponible online en http://dis.um.es/~ginesgm/retoviajante.html [Fecha de consulta: 19/03/2022]
+* [[[gines-mapa,1]]] Gines García Mateos. El Reto del Viajante. Disponible online en http://dis.um.es/~ginesgm/retoviajante.html [Fecha de consulta: 19/03/2022]
