@@ -57,6 +57,8 @@ problema planteado. Un algoritmo escogerá la arista de menor coste para pavimen
 
 Además, deberá implementar un *generador de redes aleatorias* (grafos no orientados, valorados positivamente y conexos). En el que dados un número de vértices y un número de aristas válido, generará una red aleatoria en un archivo de texto en disco (siguiendo el mismo formato que las redes reales) para luego poder cargarlo y ejecutar los algoritmos greedy sobre redes mucho más grandes.
 
+ifdef::backend-html5[]
+
 [source,subs="verbatim,quotes"]
 ----
 *0* // no dirigido
@@ -69,6 +71,7 @@ Además, deberá implementar un *generador de redes aleatorias* (grafos no orien
 *1 2 25.0* // vi vj costeij
 // así hasta completar m entradas/aristas
 ----
+endif::[]
 
 Para ello deberá realizar los siguientes apartados:
 
