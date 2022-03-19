@@ -5,6 +5,7 @@ Nombre y título del trabajo
 :navtitle: Introducción
 ifdef::env-github[]
 :imagesdir: ../images
+:figure-caption: Figura
 endif::[]
 
 Estructuras de datos y Algoritmos II. Universidad de Almería
