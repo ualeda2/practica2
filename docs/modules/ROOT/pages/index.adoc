@@ -1,0 +1,54 @@
+////
+Nombre y título del trabajo
+////
+= PRÁCTICA 2 – Esquema Algorítmico Greedy o Voraz: Pavimentación de caminos
+:navtitle: Introducción
+
+Estructuras de datos y Algoritmos II. Universidad de Almería
+
+_Version_ *{page-component-display-version}*
+
+
+////
+COLOCA A CONTINUACION LOS OBJETIVOS
+////
+== Objetivos
+====
+* Construir soluciones a un problema utilizando el método algorítmico greedy (o voraz).
+* Comparar los algoritmos implementados tanto cualitativa como cuantitativamente.
+* Realizar el análisis de la eficiencia de las soluciones aportadas, y una comparativa tanto desde el punto de vista teórico como práctico.
+====
+
+== Requerimientos
+****
+Para superar esta práctica se debe realizar lo siguiente:
+
+* Recordar (de EDA I, el mapa de adyacencias) las estructuras de datos para implementar una red (grafo no dirigido) y su uso para la resolución de problemas.
+
+* Conocer cómo implementar el esquema greedy sobre grafos para responder a una necesidad
+concreta (en este caso, resolver un problema relativo a una red de caminos).
+
+* Evaluar los algoritmos greedy implementados, utilizando redes reales y redes generadas
+aleatoriamente.
+****
+
+
+== Enunciado del problema
+
+Una de las principales aplicaciones prácticas de los grafos son las *redes*, por ejemplo: la red de carreteras, la red de ferrocarriles, las redes de comunicaciones, etc. En este caso tenemos una red de caminos que conectan todos los núcleos de población del país *EDAland*, y la necesidad que tiene el Ministerio de Infraestructuras y transportes de ese país es la de pavimentarlos. Pero dada la actual crisis económica en que estamos inmersos, no se dispone de presupuesto suficiente para poder pavimentar todos los posibles caminos del país. Tras una dura negociación con el ministerio y teniendo en cuenta el reducido presupuesto disponible, se ha decidido que se pavimentarán únicamente  aquellos caminos para poder ir de un núcleo de población a otro siguiendo una ruta pavimentada, y además, se dedique el menor presupuesto posible en la realización de la obra. Otro aspecto a considerar es que a los habitantes del país no les importa recorrer mucha distancia, pues ahora se mueven en bicicleta (dado el elevado precio del combustible) que es muy beneficioso para la salud y el medioambiente.
+*El Ministro está muy interesado en saber qué caminos hay que pavimentar para conectar a todos los posibles núcleos de población del país con el menor presupuesto posible.*
+
+En un primer lugar se dispone de la *red reducida de caminos* de EDAland (Figura 1) que conecta a los grandes núcleos de población (ciudades) del país (21 ciudades y 29 caminos), junto con la estimación en miles de euros de lo que costaría pavimentar el trayecto entre dos ciudades (misma red de EDA I). Por ejemplo, pavimentar el camino que conecta Almería con Granada constaría 173.000 euros. Esta red nos servirá para probar nuestros algoritmos greedy y verificar su correcto funcionamiento. 
+
+[#fig1]
+.Red reducida de caminos de EDAland
+image::pr2-fig1.png[Red reducida de caminos de EDAland,width=640,pdfwidth=70%,align="center"]
+
+== Trabajo a desarrollar
+
+== Entregas
+
+== Evaluación
+
+== Fecha de entrega
+Fecha de entrega: *17 de Abril de 2020*

@@ -1,3 +1,3 @@
-# Practica2
+# Práctica2
 Práctica 2 - Greedy
 

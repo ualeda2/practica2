@@ -1,0 +1,42 @@
+////
+Codificación, idioma, tabla de contenidos, tipo de documento
+////
+:encoding: utf-8
+:lang: es
+:toc: right
+:toc-title: Tabla de contenidos
+:keywords: EDAII Algoritmos
+:doctype: book
+:icons: font
+
+////
+/// activar btn:
+////
+:experimental:
+
+:source-highlighter: rouge
+:rouge-linenums-mode: inline
+
+// :highlightjsdir: ./highlight
+
+:figure-caption: Figura
+:example-caption!: 
+
+// Eliminar el bloque final "last updated"
+:reproducible:      
+
+// PDF  -- no parece que funcione
+:pdf-style: themes/my-theme.yml
+:title_page: false
+
+:page-component-display-version: curso.2022
+
+// :leveloffset: 1
+
+//includes
+[.text-justify]
+:section: ROOT
+:sectionPath: modules/{section}/pages
+:imagesdir: modules/{section}/images
+include::{sectionPath}/index.adoc[]
+

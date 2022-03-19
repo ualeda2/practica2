@@ -1,0 +1,16 @@
+extends: default
+base:
+  font:
+    color: #333333
+    family: Times-Roman
+    size: 14
+heading:
+  chapter:
+    break-before: auto
+  part:
+    break-before: auto
+image:
+  align: center
+caption:
+  align: center
+  font-size: 12
