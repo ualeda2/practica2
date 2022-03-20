@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.17">
 <meta name="keywords" content="EDAII Algoritmos">
-<title>PRÁCTICA 2 – Esquema Algorítmico Greedy o Voraz: Pavimentación de caminos</title>
+<title>Practice 2 – Greedy design technique: Road paving</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /*! Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -655,19 +655,19 @@ pre.rouge {
 </head>
 <body class="article toc2 toc-right text-justify">
 <div id="header">
-<h1>PRÁCTICA 2 – Esquema Algorítmico Greedy o Voraz: Pavimentación de caminos</h1>
+<h1>Practice 2 – Greedy design technique: Road paving</h1>
 <div id="toc" class="toc2">
 <div id="toctitle">Tabla de contenidos</div>
 <ul class="sectlevel1">
-<li><a href="#_objetivos">Objetivos</a></li>
-<li><a href="#_requerimientos">Requerimientos</a></li>
-<li><a href="#_enunciado_del_problema">Enunciado del problema</a></li>
-<li><a href="#_trabajo_a_desarrollar">Trabajo a desarrollar</a></li>
-<li><a href="#_archivos_de_datos">Archivos de datos</a></li>
-<li><a href="#_entregas">Entregas</a></li>
-<li><a href="#_evaluación">Evaluación</a></li>
-<li><a href="#_fecha_de_entrega">Fecha de entrega</a></li>
-<li><a href="#_referencias">Referencias</a></li>
+<li><a href="#_goals">Goals</a></li>
+<li><a href="#_requirements">Requirements</a></li>
+<li><a href="#_problem_statement">Problem statement</a></li>
+<li><a href="#_work_to_develop">Work to develop</a></li>
+<li><a href="#_datafiles">Datafiles</a></li>
+<li><a href="#_submissions">Submissions</a></li>
+<li><a href="#_assessment">Assessment</a></li>
+<li><a href="#_deadline">Deadline</a></li>
+<li><a href="#_references">References</a></li>
 </ul>
 </div>
 </div>
@@ -675,7 +675,7 @@ pre.rouge {
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>Estructuras de datos y Algoritmos II. Universidad de Almería</p>
+<p>Data Structures and Algorithms II. University of Almeria</p>
 </div>
 <div class="paragraph">
 <p><em>Version</em> <strong>curso.2022</strong></p>
@@ -683,20 +683,20 @@ pre.rouge {
 </div>
 </div>
 <div class="sect1">
-<h2 id="_objetivos">Objetivos</h2>
+<h2 id="_goals">Goals</h2>
 <div class="sectionbody">
 <div class="exampleblock">
 <div class="content">
 <div class="ulist">
 <ul>
 <li>
-<p>Construir soluciones a un problema utilizando el método algorítmico greedy (o voraz).</p>
+<p>Construct solutions to a problem using the greedy algorithmic method.</p>
 </li>
 <li>
-<p>Comparar los algoritmos implementados tanto cualitativa como cuantitativamente.</p>
+<p>Compare the implemented algorithms both qualitatively and quantitatively.</p>
 </li>
 <li>
-<p>Realizar el análisis de la eficiencia de las soluciones aportadas, y una comparativa tanto desde el punto de vista teórico como práctico.</p>
+<p>Carry out an analysis of the efficiency of the solutions provided, and a comparison both from a theoretical and practical point of view.</p>
 </li>
 </ul>
 </div>
@@ -705,209 +705,209 @@ pre.rouge {
 </div>
 </div>
 <div class="sect1">
-<h2 id="_requerimientos">Requerimientos</h2>
+<h2 id="_requirements">Requirements</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Para superar esta práctica se debe realizar lo siguiente:</p>
+<p>To pass this practice, the following must be done:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Recordar (de EDA I, el mapa de adyacencias) las estructuras de datos para implementar una red (grafo no dirigido) y su uso para la resolución de problemas.</p>
+<p>Remember (from EDA I, the adjacency map) the data structures to implement a network (undirected graph) and its use for problem solving .</p>
 </li>
 <li>
-<p>Conocer cómo implementar el esquema greedy sobre grafos para responder a una necesidad
-concreta (en este caso, resolver un problema relativo a una red de caminos).</p>
+<p>Know how to implement the greedy scheme on graphs to respond to a
+specific need (in this case, solving a problem related to a road network).</p>
 </li>
 <li>
-<p>Evaluar los algoritmos greedy implementados, utilizando redes reales y redes generadas
-aleatoriamente.</p>
+<p>Evaluate the implemented greedy algorithms, using real networks and
+randomly generated networks.</p>
 </li>
 </ul>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_enunciado_del_problema">Enunciado del problema</h2>
+<h2 id="_problem_statement">Problem statement</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Una de las principales aplicaciones prácticas de los grafos son las <strong>redes</strong>, por ejemplo: la red de carreteras, la red de ferrocarriles, las redes de comunicaciones, etc. En este caso tenemos una red de caminos que conectan todos los núcleos de población del país <strong>EDAland</strong>, y la necesidad que tiene el Ministerio de Infraestructuras y transportes de ese país es la de pavimentarlos. Pero dada la actual crisis económica en que estamos inmersos, no se dispone de presupuesto suficiente para poder pavimentar todos los posibles caminos del país. Tras una dura negociación con el ministerio y teniendo en cuenta el reducido presupuesto disponible, se ha decidido que se pavimentarán únicamente  aquellos caminos para poder ir de un núcleo de población a otro siguiendo una ruta pavimentada, y además, se dedique el menor presupuesto posible en la realización de la obra. Otro aspecto a considerar es que a los habitantes del país no les importa recorrer mucha distancia, pues ahora se mueven en bicicleta (dado el elevado precio del combustible) que es muy beneficioso para la salud y el medioambiente.
-<strong>El Ministro está muy interesado en saber qué caminos hay que pavimentar para conectar a todos los posibles núcleos de población del país con el menor presupuesto posible.</strong></p>
+<p>One of the main practical applications of graphs are <strong>networks</strong>, for example: the road network, the railway network, communication networks, etc. In this case we have a network of roads that connect all the population centers of the country <strong>EDAland</strong>, and the need of the Ministry of Infrastructure and Transport of that country is to pave them. But given the current economic crisis in which we are immersed, there is not enough budget to be able to pave all possible roads in the country. After a tough negotiation with the ministry and taking into account the reduced budget available, it has been decided that only some roads will be paved to be able to go from one population center to another following a paved route, and also, the smallest possible budget will be dedicated to the realization of the work. Another aspect to consider is that the inhabitants of the country do not mind traveling a long distance, since now they move by bicycle (given the high price of fuel), which is very beneficial for health and the environment.
+<strong>The Minister is very interested in knowing which roads need to be paved to connect all possible population centers in the country with the lowest possible budget.</strong></p>
 </div>
 <div class="paragraph">
-<p>En un primer lugar se dispone de la <strong>red reducida de caminos</strong> de EDAland (<a href="#fig1">Figura 1</a>, adaptado del grafo de ciudades y carreteras de <a href="#gines-mapa">[1]</a>) que conecta a los grandes núcleos de población (ciudades) del país (21 ciudades y 29 caminos), junto con la estimación en miles de euros de lo que costaría pavimentar el trayecto entre dos ciudades (misma red de EDA I). Por ejemplo, pavimentar el camino que conecta Almería con Granada constaría 173.000 euros. Esta red nos servirá para probar nuestros algoritmos greedy y verificar su correcto funcionamiento.</p>
+<p>First of all, there is the <strong>reduced network of roads</strong> of EDAland (<a href="#fig1">Figure 1</a>) that connects the large population centers (cities) of the country (21 cities and 29 roads), together with the estimate in thousands of euros of what it would cost to pave the route between two cities (same road network as in EDA I). For example, paving the road that connects Almería with Granada would cost 173,000 euros. This network will be used to test our greedy algorithms and verify their correct operation.</p>
 </div>
 <div id="fig1" class="imageblock text-center">
 <div class="content">
-<img src="modules/ROOT/images/pr2-fig1.png" alt="Red reducida de caminos de EDAland" width="640">
+<img src="modules/ROOT/images/pr2-fig1.png" alt="Reduced path network of EDAland" width="640">
 </div>
-<div class="title">Figura 1. Red reducida de caminos de EDAland</div>
+<div class="title">Figure 1. Reduced path network of EDAland</div>
 </div>
 <div class="paragraph">
-<p>Una vez comprobado el correcto funcionamiento de nuestros algoritmos greedy en la red reducida de caminos, los ejecutaremos en la <strong>red nacional de caminos</strong> de EDALand que dispone el Ministerio (1053 núcleos de población y 2017 caminos con el coste estimado de pavimentarlos en miles de euros) (<a href="#fig2">Figura 2</a>, adaptado del grafo de ciudades y carreteras de <a href="#gines-mapa">[1]</a>), y de esta manera ya se tendría el presupuesto total que costaría la obra global, que como ya sabemos debe ser el menor posible (requerimiento principal del Ministerio).</p>
+<p>Once you check the correct operation of our greedy algorithms in the reduced network of roads, we will execute them in the <strong>national network of roads</strong> of EDALand that the Ministry has (1053 population centers and 2017 roads with the estimated cost of paving them in thousands of euros) (<a href="#fig2">Figure 2</a>, adapted from roads graph published in  <a href="#gines-mapa">[1]</a>), and in this way we would already have the total budget that the global work would cost, which, as we already know, must be the least possible (main requirement of the Ministry).</p>
 </div>
 <div id="fig2" class="imageblock text-center">
 <div class="content">
-<img src="modules/ROOT/images/pr2-fig2.png" alt="Red nacional de caminos de EDAland" width="640">
+<img src="modules/ROOT/images/pr2-fig2.png" alt="EDAland National Road Network" width="640">
 </div>
-<div class="title">Figura 2. Red nacional de caminos de EDAland</div>
+<div class="title">Figure 2. EDAland National Road Network</div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_trabajo_a_desarrollar">Trabajo a desarrollar</h2>
+<h2 id="_work_to_develop">Work to develop</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Deberá proponer e implementar dos soluciones (algoritmos) con el esquema greedy (voraz) al
-problema planteado. Un algoritmo escogerá la arista de menor coste para pavimentar entre las que queden disponibles, manteniendo conexa la subred que se está construyendo. Y el otro, seleccionará la arista de menor coste entre todas las restantes, aunque la subred resultante no sea conexa. Para el primer caso, se implementarán dos variantes del algoritmo, utilizando una <strong>cola de prioridad y sin ella</strong>.</p>
+<p>You must propose and implement two solutions (algorithms) with the greedy scheme to the
+problem posed. An algorithm will choose the lowest cost edge to pave among those that are available, keeping the subnet being built connected. The other will select the edge with the lowest cost among all the remaining ones, even if the resulting subnetwork is not connected. For the first case, two variants of the algorithm will be implemented, using a <strong>priority queue and without</strong>.</p>
 </div>
 <div class="paragraph">
-<p>Además, deberá implementar un <strong>generador de redes aleatorias</strong> (grafos no orientados, valorados positivamente y conexos). En el que dados un número de vértices y un número de aristas válido, generará una red aleatoria en un archivo de texto en disco (siguiendo el mismo formato que las redes reales) para luego poder cargarlo y ejecutar los algoritmos greedy sobre redes mucho más grandes.</p>
+<p>In addition, you will need to implement a <strong>random network generator</strong> (unoriented, positively valued, connected graphs). In which, given a valid number of vertexes and a valid number of edges, it will generate a random network in a text file on disk (following the same format as real networks) so that it can then be loaded and run the greedy algorithms on much larger networks. .</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code><strong>0</strong> // no dirigido
-<strong>n</strong> // número de vértices
-<strong>1</strong> // vértice 1
-<strong>2</strong> // vértice 2
+<pre class="rouge highlight"><code><strong>0</strong> // undirected
+<strong>n</strong> // number of vertexes
+<strong>1</strong> // vertex 1
+<strong>2</strong> // vertex 2
 <strong>...</strong>
-<strong>n</strong> // vértice n
-<strong>m</strong> // número de aristas
-<strong>1 2 25.0</strong> // vi vj costeij
-// así hasta completar m entradas/aristas</code></pre>
+<strong>n</strong> // vertex n
+<strong>m</strong> // number of edges
+<strong>1 2 25.0</strong> // vi vj costij
+// like this until completing m entries/edges</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Para ello deberá realizar los siguientes apartados:</p>
+<p>To do this, you must complete the following sections:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Estudio de la implementación</strong>: Explicar los detalles más importantes de la implementación, tanto de las estructuras de datos utilizadas para almacenar la red, como de los algoritmos greedy implementados. El código debe de estar razonablemente bien documentado (JavaDoc).</p>
+<p><strong>Study of the implementation</strong>: Explain the most important details of the implementation, both of the data structures used to store the network, and of the implemented greedy algorithms. The code must be reasonably well documented (JavaDoc).</p>
 </li>
 <li>
-<p><strong>Estudio teórico</strong>: Estudiar los tiempos de ejecución de los algoritmos implementados, en función del número de núcleos de población (vértices) y del número de caminos (aristas). Comparar también los algoritmos propuestos, teniendo en cuenta las características de la  red (grafo) y las técnicas de implementación elegidas. Responder de forma justificada a las siguientes preguntas: <strong>(1)</strong> ¿el resultado de la ejecución de cada algoritmo es único?. <strong>(2)</strong> ¿el resultado de la ejecución de los dos algoritmos debe ser el mismo?, ¿por qué?. <strong>(3)</strong> si el peso de las aristas fuese la distancia entre dos ciudades, con la estructura resultante, ¿podemos determinar el camino mínimo entre dos pares de ciudades cualquiera?.</p>
+<p><strong>Theoretical study</strong>: Study the execution times of the implemented algorithms, depending on the number of population centers (vertexes) and the number of paths (edges). Also compare the proposed algorithms, taking into account the characteristics of the network (graph) and the chosen implementation techniques. Justifiably answer the following questions: <strong>(1)</strong> Is the result of the execution of each algorithm unique? <strong>(2)</strong> Should the result of the execution of the two algorithms be the same? Why? <strong>(3)</strong> If the weight of the edges were the distance between two cities, with the resulting structure, can we determine the minimum path between any two pairs of cities?</p>
 </li>
 <li>
-<p><strong>Estudio experimental</strong>: Validación de los algoritmos greedy implementados sobre las redes reales (EDAland) proporcionadas. Para ello, se deberán obtener y comparar los tiempos de ejecución de los algoritmos implementados. Se contrastarán los resultados teóricos y los experimentales, comprobando si los experimentales confirman los teóricos previamente analizados. Se justificarán los experimentos realizados, y en caso de discrepancia entre la teoría y los experimentos se debe intentar buscar una explicación razonada. Además, se generarán <strong>redes aleatorias</strong> (grafos no orientados, valorados positivamente y conexos), fijando un número vértices (por ejemplo 5000, 10000, 15000 y 20000) y variando el número aristas de tal manera que el grafo quede siempre conexo (<strong>generador de redes aleatorias</strong>). Sobre estas nuevas redes, se volverán a probar los algoritmos greedy implementados para poder compararlos con un número mayor de vértices y aristas.</p>
+<p><strong>Experimental study</strong>: Validation of the greedy algorithms implemented on the real networks (EDAland) provided. To do this, the execution times of the implemented algorithms must be obtained and compared. The theoretical and experimental results will be contrasted, checking if the experimental ones confirm the previously analyzed theoretical ones. The experiments carried out will be justified, and in case of discrepancy between the theory and the experiments, an attempt should be made to find a reasoned explanation. In addition, <strong>random networks</strong> (non-oriented, positively valued and connected graphs) will be generated, setting a number of vertexes (for example 5000, 10000, 15000 and 20000) and varying the number of edges in such a way that the graph is always connected (* random net generator*). On these new networks, the implemented greedy algorithms will be retested in order to compare them with a greater number of vertexes and edges.</p>
 </li>
 </ul>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_archivos_de_datos">Archivos de datos</h2>
+<h2 id="_datafiles">Datafiles</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Los datos están disponibles en el repositorio GitHub de esta práctica, en la carpeta <code>dataset</code>:</p>
+<p>Datafiles are available on the GitHub <a href="https://github.com/ualeda2/practica2">repository</a> of this activity, in <code>dataset</code> folder:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><code>graphPrimKruskal.txt</code> &#8658; archivo con el grafo de las transparencias de clase para los algoritmos de Prim y Kruskal.</p>
+<p><code>graphPrimKruskal.txt</code> &#8658; file with the graph example from class slides of Prim and Kruskal algorithms.</p>
 </li>
 <li>
-<p><code>graphEDAland.txt</code> &#8658; archivo con el grafo reducido de EDAland (<a href="#fig1">Figura 1</a>)</p>
+<p><code>graphEDAland.txt</code> &#8658; file with reduced path network of EDAland (<a href="#fig1">Figure 1</a>)</p>
 </li>
 <li>
-<p><code>graphEDAlandLarge.txt</code> &#8658; archivo con el grafo grande de EDAland (<a href="#fig2">Figura 2</a>)</p>
+<p><code>graphEDAlandLarge.txt</code> &#8658; file with EDAland national road network (<a href="#fig2">Figure 2</a>)</p>
 </li>
 <li>
-<p><code>graphEDAlandLargeVertices.txt</code> &#8658; archivo con los vértices y sus coordenadas x, y por si alguien quiere representarlo gráficamente (voluntario).</p>
+<p><code>graphEDAlandLargeVertices.txt</code> &#8658; file with vertexes and their x,y coordinates for graphical representation (volunteer).</p>
 </li>
 </ul>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_entregas">Entregas</h2>
+<h2 id="_submissions">Submissions</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Se ha de entregar, en fecha, un repositorio público de GitHub (mismo repositorio para todas las prácticas de EDA II) con toda la documentación y código fuente requerido en la práctica:</p>
+<p>A public GitHub repository (same repository for all EDA II practices) with all the documentation and source code required in the practice must be submitted on date:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>En dicho repositorio crear una nueva carpeta llamada <code>practica_2</code>, donde creéis dos subcarpetas una para la documentación, <code>docs</code> y otra para el código fuente <code>sources</code>.</p>
+<p>In said repository, create a new folder called <code>practica_2</code>, where you create two subfolders, one for the documentation, <code>docs</code>, and one for the source code, <code>sources</code>.</p>
 </li>
 <li>
-<p>Memoria que explique todo lo que habéis realizado en la práctica. La memoria deberá tener el formato que se indica a continuación. Si se desea, también se podrá realizar una presentación de la práctica.</p>
+<p>Memory that explains everything you have done in practice. The memory must have the format indicated below. If desired, you can also make a presentation of the practice.</p>
 </li>
 <li>
-<p>Código fuente de la aplicación, desarrollada en JAVA, que resuelva todo lo planteado en la práctica. Recordad que tendréis que medir tiempos de ejecución de vuestras soluciones por lo que deberéis incluir las órdenes necesarias para ello en el código fuente.</p>
+<p>Source code of the application, developed in JAVA, which solves everything raised in practice. Remember that you will have to measure execution times of your solutions, so you must include the necessary commands for this in the source code.</p>
 </li>
 <li>
-<p>Juegos de prueba que consideréis oportunos para asegurarnos de que todo funciona
-correctamente.</p>
+<p>Test games that you consider appropriate to make sure that everything works
+correctly.</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>La <strong>memoria</strong> de práctica a entregar debe ser breve, clara y estar bien escrita. Ésta debe incluir las siguientes secciones:</p>
+<p>The <strong>memory</strong> of practice to deliver must be brief, clear and well written. This should include the following sections:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Una breve <strong>introducción</strong> con un estudio teórico del método algorítmico utilizado en esta práctica (greedy).</p>
+<p>A brief <strong>introduction</strong> with a theoretical study of the algorithmic method used in this practice (greedy).</p>
 </li>
 <li>
-<p>Una sección para cada uno de <strong>apartados propuestos</strong> a desarrollar en esta práctica (estudio de la implementación, estudio teórico y estudio experimental). Hemos de remarcar que deben incluirse los apartados en el mismo orden en el que se han expuesto.</p>
+<p>A section for each of the <strong>proposed sections</strong> to be developed in this practice (implementation study, theoretical study and experimental study). We must emphasize that the sections must be included in the same order in which they have been presented.</p>
 </li>
 <li>
-<p>Se incluirá también un anexo con el diseño del código implementado con diagramas de clases y cualquier otro diagrama que estiméis necesario incluir, no introducir ningún código en este anexo. Además, añadir en esta sección una lista de los archivos fuente y una breve descripción del contenido de cada uno.</p>
+<p>An annex with the design of the implemented code will also be included, with class diagram and any other diagram you consider useful, but do not include code here. In this annex, a list of the source files and a brief description of the content of each one must be included as well.</p>
 </li>
 <li>
-<p>Es importante incluir siempre las <strong>fuentes bibliográficas</strong> utilizadas (web, libros, artículos, etc.) y hacer referencia a ellas en el documento.</p>
+<p>It is important to always include the <strong>bibliographical sources</strong> used (web, books, articles, etc.) and refer to them in the document.</p>
 </li>
 </ul>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_evaluación">Evaluación</h2>
+<h2 id="_assessment">Assessment</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Cada apartado se evaluará independientemente, aunque es condición necesaria para aprobar la práctica que los programas implementados funcionen correctamente.</p>
+<p>Each section will be evaluated independently, although it is a necessary condition to pass the internship that the implemented programs work correctly.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>La implementación junto con la documentación del código se valorará sobre un 40%</p>
+<p>The implementation together with the documentation of the code will be valued out of 40%</p>
 </li>
 <li>
-<p>El estudio de la implementación se valorará sobre un 10%</p>
+<p>The study of the implementation will be valued out of 10%</p>
 </li>
 <li>
-<p>El estudio teórico se valorará sobre un 15%</p>
+<p>The theoretical study will be valued out of 15%</p>
 </li>
 <li>
-<p>El estudio experimental se valorará sobre un 35%</p>
+<p>The experimental study will be valued out of 35%</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>Se penalizará no entregar el apartado de introducción teórico o una mala presentación de la memoria.</p>
+<p>It will be penalized not deliver the theoretical introduction section or a bad presentation of the report.</p>
 </div>
 <div class="paragraph">
-<p>Se podrá requerir la defensa del código y de la memoria por parte de profesor.</p>
+<p>The defense of the code and memory by the teacher may be required.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_fecha_de_entrega">Fecha de entrega</h2>
+<h2 id="_deadline">Deadline</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Fecha de entrega: <strong>17 de Abril de 2020</strong></p>
+<p>Deadline: <strong>April 17th 2020</strong></p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_referencias">Referencias</h2>
+<h2 id="_references">References</h2>
 <div class="sectionbody">
 <div class="ulist bibliography">
 <ul class="bibliography">
 <li>
-<p><a id="gines-mapa"></a>[1] Gines García Mateos. El Reto del Viajante. Disponible online en <a href="http://dis.um.es/~ginesgm/retoviajante.html" class="bare">http://dis.um.es/~ginesgm/retoviajante.html</a> [Fecha de consulta: 19/03/2022]</p>
+<p><a id="gines-mapa"></a>[1] Gines García Mateos. The Traveler&#8217;s Challenge. Available online on <a href="http://dis.um.es/~ginesgm/retoviajante.html" class="bare">http://dis.um.es/~ginesgm/retoviajante.html</a> [Date of consult: 2022/03/19]</p>
 </li>
 </ul>
 </div>

@@ -42,13 +42,13 @@ randomly generated networks.
 One of the main practical applications of graphs are *networks*, for example: the road network, the railway network, communication networks, etc. In this case we have a network of roads that connect all the population centers of the country *EDAland*, and the need of the Ministry of Infrastructure and Transport of that country is to pave them. But given the current economic crisis in which we are immersed, there is not enough budget to be able to pave all possible roads in the country. After a tough negotiation with the ministry and taking into account the reduced budget available, it has been decided that only some roads will be paved to be able to go from one population center to another following a paved route, and also, the smallest possible budget will be dedicated to the realization of the work. Another aspect to consider is that the inhabitants of the country do not mind traveling a long distance, since now they move by bicycle (given the high price of fuel), which is very beneficial for health and the environment.
 *The Minister is very interested in knowing which roads need to be paved to connect all possible population centers in the country with the lowest possible budget.*
 
-First of all, there is the *reduced network of roads* of EDAland (link: #fig1[Figure 1]) that connects the large population centers (cities) of the country (21 cities and 29 roads), together with the estimate in thousands of euros of what it would cost to pave the route between two cities (same road network as in EDA I). For example, paving the road that connects Almería with Granada would cost 173,000 euros. This network will be used to test our greedy algorithms and verify their correct operation. 
+First of all, there is the *reduced network of roads* of EDAland (link:#fig1[Figure 1], adapted from cities and roads graph published in <<gines-mapa>>) that connects the large population centers (cities) of the country (21 cities and 29 roads), together with the estimate in thousands of euros of what it would cost to pave the route between two cities (same road network as in EDA I). For example, paving the road that connects Almería with Granada would cost 173,000 euros. This network will be used to test our greedy algorithms and verify their correct operation. 
 
 [#fig1]
 .Reduced path network of EDAland
 image::pr2-fig1.png[Reduced path network of EDAland,width=640,pdfwidth=80%,align="center"]
 
-Once you check the correct operation of our greedy algorithms in the reduced network of roads, we will execute them in the *national network of roads* of EDALand that the Ministry has (1053 population centers and 2017 roads with the estimated cost of paving them in thousands of euros) (link:#fig2[Figure 2], adapted from roads graph published in  <<gines-mapa>>), and in this way we would already have the total budget that the global work would cost, which, as we already know, must be the least possible (main requirement of the Ministry).
+Once you check the correct operation of our greedy algorithms in the reduced network of roads, we will execute them in the *national network of roads* of EDALand that the Ministry has (1053 population centers and 2017 roads with the estimated cost of paving them in thousands of euros) (link:#fig2[Figure 2], adapted from cities and roads graph published in <<gines-mapa>>), and in this way we would already have the total budget that the global work would cost, which, as we already know, must be the least possible (main requirement of the Ministry).
 
 [#fig2]
 .EDAland National Road Network
@@ -60,14 +60,14 @@ image::pr2-fig2.png[EDAland National Road Network,width=640,pdfwidth=80%,align="
 You must propose and implement two solutions (algorithms) with the greedy scheme to the
 problem posed. An algorithm will choose the lowest cost edge to pave among those that are available, keeping the subnet being built connected. The other will select the edge with the lowest cost among all the remaining ones, even if the resulting subnetwork is not connected. For the first case, two variants of the algorithm will be implemented, using a *priority queue and without*.
 
-In addition, you will need to implement a *random network generator* (unoriented, positively valued, connected graphs). In which, given a valid number of vertices and a valid number of edges, it will generate a random network in a text file on disk (following the same format as real networks) so that it can then be loaded and run the greedy algorithms on much larger networks. .
+In addition, you will need to implement a *random network generator* (unoriented, positively valued, connected graphs). In which, given a valid number of vertexes and a valid number of edges, it will generate a random network in a text file on disk (following the same format as real networks) so that it can then be loaded and run the greedy algorithms on much larger networks. .
 
 ifdef::backend-html5[]
 
 [source,subs="verbatim,quotes"]
 ----
 *0* // undirected
-*n* // number of vertices
+*n* // number of vertexes
 *1* // vertex 1
 *2* // vertex 2
 *...*
@@ -83,7 +83,7 @@ ifdef::backend-pdf[]
 [source]
 ----
 0 // undirected
-n // number of vertices
+n // number of vertexes
 1 // vertex 1
 2 // vertex 2
 ...
@@ -99,15 +99,27 @@ To do this, you must complete the following sections:
 
 * *Study of the implementation*: Explain the most important details of the implementation, both of the data structures used to store the network, and of the implemented greedy algorithms. The code must be reasonably well documented (JavaDoc).
 
-* *Theoretical study*: Study the execution times of the implemented algorithms, depending on the number of population centers (vertices) and the number of paths (edges). Also compare the proposed algorithms, taking into account the characteristics of the network (graph) and the chosen implementation techniques. Justifiably answer the following questions: *(1)* Is the result of the execution of each algorithm unique? *(2)* Should the result of the execution of the two algorithms be the same? Why? *(3)* If the weight of the edges were the distance between two cities, with the resulting structure, can we determine the minimum path between any two pairs of cities?
+* *Theoretical study*: Study the execution times of the implemented algorithms, depending on the number of population centers (vertexes) and the number of paths (edges). Also compare the proposed algorithms, taking into account the characteristics of the network (graph) and the chosen implementation techniques. Justifiably answer the following questions: *(1)* Is the result of the execution of each algorithm unique? *(2)* Should the result of the execution of the two algorithms be the same? Why? *(3)* If the weight of the edges were the distance between two cities, with the resulting structure, can we determine the minimum path between any two pairs of cities?
 
-* *Experimental study*: Validation of the greedy algorithms implemented on the real networks (EDAland) provided. To do this, the execution times of the implemented algorithms must be obtained and compared. The theoretical and experimental results will be contrasted, checking if the experimental ones confirm the previously analyzed theoretical ones. The experiments carried out will be justified, and in case of discrepancy between the theory and the experiments, an attempt should be made to find a reasoned explanation. In addition, *random networks* (non-oriented, positively valued and connected graphs) will be generated, setting a number of vertices (for example 5000, 10000, 15000 and 20000) and varying the number of edges in such a way that the graph is always connected (* random net generator*). On these new networks, the implemented greedy algorithms will be retested in order to compare them with a greater number of vertices and edges.
+* *Experimental study*: Validation of the greedy algorithms implemented on the real networks (EDAland) provided. To do this, the execution times of the implemented algorithms must be obtained and compared. The theoretical and experimental results will be contrasted, checking if the experimental ones confirm the previously analyzed theoretical ones. The experiments carried out will be justified, and in case of discrepancy between the theory and the experiments, an attempt should be made to find a reasoned explanation. In addition, *random networks* (non-oriented, positively valued and connected graphs) will be generated, setting a number of vertexes (for example 5000, 10000, 15000 and 20000) and varying the number of edges in such a way that the graph is always connected (* random net generator*). On these new networks, the implemented greedy algorithms will be retested in order to compare them with a greater number of vertexes and edges.
+
+== Datafiles
+
+Datafiles are available on the GitHub https://github.com/ualeda2/practica2[repository] of this activity, in `dataset` folder: 
+
+- `graphPrimKruskal.txt` => file with the graph example from class slides of Prim and Kruskal algorithms.
+
+- `graphEDAland.txt` => file with reduced path network of EDAland (link:#fig1[Figure 1])
+
+- `graphEDAlandLarge.txt` => file with EDAland national road network (link:#fig2[Figure 2])
+
+- `graphEDAlandLargeVertices.txt` => file with vertexes and their x,y coordinates for graphical representation (volunteer). 
 
 == Submissions
 
 A public GitHub repository (same repository for all EDA II practices) with all the documentation and source code required in the practice must be submitted on date:
 
-* In said repository, create a new folder called `practica_2 `, where you create two subfolders, one for the documentation, `docs`, and one for the source code, `sources`.
+* In said repository, create a new folder called `practica_2`, where you create two subfolders, one for the documentation, `docs`, and one for the source code, `sources`.
 
 * Memory that explains everything you have done in practice. The memory must have the format indicated below. If desired, you can also make a presentation of the practice.
 
@@ -122,7 +134,7 @@ The *memory* of practice to deliver must be brief, clear and well written. This 
 
 * A section for each of the *proposed sections* to be developed in this practice (implementation study, theoretical study and experimental study). We must emphasize that the sections must be included in the same order in which they have been presented.
 
-* An annex with the design of the implemented code will also be included (do not include code), along with a list of the source files and a brief description of the content of each one. 
+* An annex with the design of the implemented code will also be included, with class diagram and any other diagram you consider useful, but do not include code here. In this annex, a list of the source files and a brief description of the content of each one must be included as well. 
 
 * It is important to always include the *bibliographical sources* used (web, books, articles, etc.) and refer to them in the document.
 

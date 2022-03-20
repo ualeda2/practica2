@@ -1,0 +1,46 @@
+////
+Codificación, idioma, tabla de contenidos, tipo de documento
+////
+:encoding: utf-8
+:lang: en
+:toc: right
+:toc-title: Tabla de contenidos
+:keywords: EDAII Algoritmos
+:doctype: article
+:icons: font
+
+////
+/// activar btn:
+////
+:experimental:
+
+:source-highlighter: rouge
+:rouge-linenums-mode: inline
+
+// :highlightjsdir: ./highlight
+
+:figure-caption: Figure
+:example-caption!: 
+
+// Eliminar el bloque final "last updated"
+:reproducible:      
+
+// PDF
+:pdf-style: themes/my-theme.yml
+:title_page: false
+// Bloque de codigo en pdf: no incluir la sección "Tabla de contenidos"
+ifdef::backend-pdf[]
+:toc!:
+endif::[]
+
+:page-component-display-version: curso.2022
+
+// :leveloffset: 1
+
+//includes
+[.text-justify]
+:section: ROOT
+:sectionPath: modules/{section}/pages
+:imagesdir: modules/{section}/images
+include::{sectionPath}/index_en.adoc[]
+
